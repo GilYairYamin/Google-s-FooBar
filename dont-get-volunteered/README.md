@@ -22,12 +22,12 @@ Both the source and destination squares will be an integer between 0 and 63, inc
 Test cases
 ==========
 
-Input:
-solution.solution(0, 1)
-Output:
+Input:\
+solution(0, 1)\
+Output:\
 3
 
-Input:
-solution.solution(19, 36)
-Output:
+Input:\
+solution(19, 36)\
+Output:\
 1

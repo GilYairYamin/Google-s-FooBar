@@ -7,12 +7,12 @@ You have L, a list containing some digits (0 to 9). Write a function answer(L) w
 Test cases
 ==========
 
-Inputs:
-    (int list) l = [3, 1, 4, 1]
-Output:
+Inputs:\
+    (int list) l = [3, 1, 4, 1]\
+Output:\
     (int) 4311
 
-Inputs:
-    (int list) l = [3, 1, 4, 1, 5, 9]
-Output:
+Inputs:\
+    (int list) l = [3, 1, 4, 1, 5, 9]\
+Output:\
     (int) 94311

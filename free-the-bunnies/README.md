@@ -9,32 +9,27 @@ Given the number of bunnies available and the number of locks required to open a
 
 Each lock is numbered starting from 0. The keys are numbered the same as the lock they open (so for a duplicate key, the number will repeat, since it opens the same lock). For a given bunny, the keys they get is represented as a sorted list of the numbers for the keys. To cover all of the bunnies, the final solution is represented by a sorted list of each individual bunny's list of keys. Find the lexicographically least such key distribution - that is, the first bunny should have keys sequentially starting from 0.
 
-num_buns will always be between 1 and 9, and num_required will always be between 0 and 9 (both inclusive). For example, if you had 3 bunnies and required only 1 of them to open the cell, you would give each bunny the same key such that any of the 3 of them would be able to open it, like so:
-[ [0], [0], [0] ]
-If you had 2 bunnies and required both of them to open the cell, they would receive different keys (otherwise they wouldn't both actually be required), and your solution would be as follows:
-[ [0], [1] ]
-Finally, if you had 3 bunnies and required 2 of them to open the cell, then any 2 of the 3 bunnies should have all of the keys necessary to open the cell, but no single bunny would be able to do it. Thus, the solution would be:
+num_buns will always be between 1 and 9, and num_required will always be between 0 and 9 (both inclusive). For example, if you had 3 bunnies and required only 1 of them to open the cell, you would give each bunny the same key such that any of the 3 of them would be able to open it, like so:\
+[ [0], [0], [0] ]\
+If you had 2 bunnies and required both of them to open the cell, they would receive different keys (otherwise they wouldn't both actually be required), and your solution would be as follows:\
+[ [0], [1] ]\
+Finally, if you had 3 bunnies and required 2 of them to open the cell, then any 2 of the 3 bunnies should have all of the keys necessary to open the cell, but no single bunny would be able to do it. Thus, the solution would be:\
 [ [0, 1], [0, 2], [1, 2] ]
-
-Tests
-The challenge also list a couple of test cases you will need to pass. However, it also indicates that there will be additional hidden tests that you need to pass. But you may not know what those test are about. Nice, uh?
 
 Test cases
 ==========
-Your code should pass the following test cases.
-Note that it may also be run against hidden test cases not shown here.
 
-Input:
-solution.solution(2, 1)
-Output:
+Input:\
+solution(2, 1)\
+Output:\
 [[0], [0]]
 
-Input:
-solution.solution(4, 4)
-Output:
+Input:\
+solution(4, 4)\
+Output:\
 [[0], [1], [2], [3]]
 
-Input:
-solution.solution(5, 3)
-Output:
+Input:\
+solution(5, 3)\
+Output:\
 [[0, 1, 2, 3, 4, 5], [0, 1, 2, 6, 7, 8], [0, 3, 4, 6, 7, 9], [1, 3, 5, 6, 8, 9], [2, 4, 5, 7, 8, 9]]
