@@ -1,5 +1,4 @@
 # Don't Get Volunteered!
-========================
 
 As a henchman on Commander Lambda’s space station, you’re expected to be resourceful, smart, and a quick thinker.
 It’s not easy building a doomsday device and ordering the bunnies around at the same time, after all! In order to make sure that everyone is sufficiently quick-witted, Commander Lambda has installed new flooring outside the henchman dormitories.
@@ -20,7 +19,8 @@ Both the source and destination squares will be an integer between 0 and 63, inc
 48	49	50	51	52	53	54	55
 56	57	58	59	60	61	62	63
 
-Your code should pass the following test cases. Note that it may also be run against hidden test cases not shown here.
+Test cases
+==========
 
 Input:
 solution.solution(0, 1)
