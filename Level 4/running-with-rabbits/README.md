@@ -29,16 +29,20 @@ With this solution, you would pick up bunnies 1 and 2. This is the best combinat
 
 # Test cases
 
-Your code should pass the following test cases.
-Note that it may also be run against hidden test cases not shown here.
+Input: solution([\
+    [0, 2, 2, 2, -1], \
+    [9, 0, 2, 2, -1], \
+    [9, 3, 0, 2, -1], \
+    [9, 3, 2, 0, -1], \
+    [9, 3, 2, 2, 0] \
+], 1)\
+Output: [1, 2]
 
--- Python cases --
-Input:\
-solution.solution([[0, 2, 2, 2, -1], [9, 0, 2, 2, -1], [9, 3, 0, 2, -1], [9, 3, 2, 0, -1], [9, 3, 2, 2, 0]], 1)\
-Output:\
-[1, 2]
-
-Input:\
-solution.solution([[0, 1, 1, 1, 1], [1, 0, 1, 1, 1], [1, 1, 0, 1, 1], [1, 1, 1, 0, 1], [1, 1, 1, 1, 0]], 3)\
-Output:\
-[0, 1]
+Input: solution([\
+    [0, 1, 1, 1, 1], \
+    [1, 0, 1, 1, 1], \
+    [1, 1, 0, 1, 1], \
+    [1, 1, 1, 0, 1], \
+    [1, 1, 1, 1, 0] \
+], 3)\
+Output: [0, 1]

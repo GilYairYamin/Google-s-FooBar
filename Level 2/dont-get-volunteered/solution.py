@@ -26,15 +26,12 @@ def solution(src, dest):
     if src == dest:
         return int(0)
 
-    visited = {}
-    for i in range(64):
-        visited[i] = False
-    print(visited)
-    queue = Queue()
-    queue.put([src, 0])
+    visited = [False for i in range(64)]
+    next_Queue = Queue()
+    next_Queue.put([src, 0])
 
-    while not queue.empty():
-        curr = queue.get()
+    while not next_Queue.empty():
+        curr = next_Queue.get()
         visited[curr[0]] = True
         len = curr[1] + 1.
 
@@ -44,5 +41,5 @@ def solution(src, dest):
             if dir == dest:
                 return int(len)
             else:
-                queue.put([dir, len])
-    return int(-1)
+                next_Queue.put([dir, len])
+    return -1

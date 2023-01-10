@@ -16,20 +16,19 @@ If you had 2 bunnies and required both of them to open the cell, they would rece
 Finally, if you had 3 bunnies and required 2 of them to open the cell, then any 2 of the 3 bunnies should have all of the keys necessary to open the cell, but no single bunny would be able to do it. Thus, the solution would be:\
 [ [0, 1], [0, 2], [1, 2] ]
 
-Test cases
-==========
+# Test cases
 
-Input:\
-solution(2, 1)\
-Output:\
-[[0], [0]]
+Input: solution(2, 1)\
+Output: [[0], [0]]
 
-Input:\
-solution(4, 4)\
-Output:\
-[[0], [1], [2], [3]]
+Input: solution(4, 4)\
+Output: [[0], [1], [2], [3]]
 
-Input:\
-solution(5, 3)\
-Output:\
-[[0, 1, 2, 3, 4, 5], [0, 1, 2, 6, 7, 8], [0, 3, 4, 6, 7, 9], [1, 3, 5, 6, 8, 9], [2, 4, 5, 7, 8, 9]]
+Input: solution(5, 3)\
+Output: [\
+    [0, 1, 2, 3, 4, 5], \
+    [0, 1, 2, 6, 7, 8], \
+    [0, 3, 4, 6, 7, 9], \
+    [1, 3, 5, 6, 8, 9], \
+    [2, 4, 5, 7, 8, 9] \
+]
