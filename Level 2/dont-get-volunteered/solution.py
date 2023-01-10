@@ -26,7 +26,7 @@ def solution(src, dest):
     if src == dest:
         return int(0)
 
-    visited = [False for i in range(64)]
+    visited = [False for _ in range(64)]
     next_Queue = Queue()
     next_Queue.put([src, 0])
 

@@ -7,7 +7,7 @@ def solution(m):
     addOnes(m, stableCount)
     convertToFraction(m)
 
-    matI = createIdentity(len(m)-stableCount)
+    matI = createIdentity(len(m) - stableCount)
     matR = getSubMat(m, stableCount, stableCount, len(
         m) - stableCount, len(m) - stableCount)
     subMat(matI, matR)
@@ -97,10 +97,10 @@ def putIn(m, subM, row, col):
 
 
 def mulMat(m1, m2):
-    res = [[Fraction(0, 1) for j in range(len(m2[0]))] for i in range(len(m1))]
+    res = [[0 for _ in range(len(m2[0]))] for _ in range(len(m1))]
     for i in range(len(m1)):
         for j in range(len(m2[0])):
-            res[i][j] = 0
+            res[i][j] = Fraction(0, 1)
             for k in range(len(m2)):
                 res[i][j] += m1[i][k] * m2[k][j]
     return res
@@ -159,6 +159,8 @@ def findStable(m):
         for num in row:
             if num != 0:
                 test = False
+                break
+
         stable.append(test)
     return stable
 
@@ -175,6 +177,7 @@ def findSwapIndecies(m):
     for i in range(len(stable)):
         if not stable[i]:
             newOrder.append(i)
+
     swapIndecies = [0 for i in range(len(stable))]
     for i in range(len(stable)):
         swapIndecies[newOrder[i]] = i
@@ -183,7 +186,7 @@ def findSwapIndecies(m):
 
 
 def swapMat(m, swap):
-    newM = [[0 for j in range(len(m))] for i in range(len(m))]
+    newM = [[0 for _ in range(len(m))] for _ in range(len(m))]
     for i in range(len(m)):
         for j in range(len(m[0])):
             newM[swap[i]][swap[j]] = m[i][j]
@@ -191,29 +194,23 @@ def swapMat(m, swap):
 
 
 def inverseMat(m):
-    iMat = createInversingMat(m)
-    for i in range(len(iMat)):
-        if iMat[i][i] == 0:
-            for j in range(i + 1, len(iMat)):
-                if iMat[i][j] != 0:
-                    addRow(iMat, i, j)
+    for i in range(len(m)):
+        m[i].extend([1 if j == i else 0 for j in range(len(m))])
+
+    for i in range(len(m)):
+        if m[i][i] == 0:
+            for j in range(i + 1, len(m)):
+                if m[i][j] != 0:
+                    addRow(m, i, j)
                     break
-        if iMat[i][i] == 0:
+        if m[i][i] == 0:
             continue
-        mulRow(iMat, i, 1 / iMat[i][i])
-        for j in range(len(iMat)):
-            if j == i or iMat[j][i] == 0:
-                continue
-            subRow(iMat, j, i, iMat[j][i])
-    for i in range(len(m)):
-        for j in range(len(m[0])):
-            m[i][j] = iMat[i][j + len(m[0])]
 
-
-def createInversingMat(m):
-    newM = []
-    for i in range(len(m)):
-        newM.append(m[i][:])
+        mulRow(m, i, 1 / m[i][i])
         for j in range(len(m)):
-            newM[i].append(1 if i == j else 0)
-    return newM
+            if j == i or m[j][i] == 0:
+                continue
+            subRow(m, j, i, m[j][i])
+
+    for i in range(len(m)):
+        m[i] = m[i][len(m):]
